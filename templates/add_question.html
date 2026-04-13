@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <h2>Add Question</h2>
+    <form method="POST">
+        <textarea name="question" placeholder="Enter question" required></textarea>
+        <input type="text" name="option1" placeholder="Option 1" required>
+        <input type="text" name="option2" placeholder="Option 2" required>
+        <input type="text" name="option3" placeholder="Option 3" required>
+        <input type="text" name="option4" placeholder="Option 4" required>
+        <input type="text" name="correct_answer" placeholder="Correct Answer (must match option exactly)" required>
+        <button class="btn" type="submit">Add Question</button>
+    </form>
+</div>
+{% endblock %}

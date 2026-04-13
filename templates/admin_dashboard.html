@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <h2>Admin Dashboard</h2>
+    <a class="btn" href="{{ url_for('add_question') }}">Add New Question</a>
+
+    <h3>All Questions</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Question</th>
+            <th>Correct Answer</th>
+            <th>Action</th>
+        </tr>
+        {% for q in questions %}
+        <tr>
+            <td>{{ q.id }}</td>
+            <td>{{ q.question }}</td>
+            <td>{{ q.correct_answer }}</td>
+            <td>
+                <a class="danger" href="{{ url_for('delete_question', q_id=q.id) }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <h2>Student Dashboard</h2>
+    <p>Welcome, {{ session['username'] }} 👋</p>
+    <a class="btn" href="{{ url_for('quiz') }}">Start Quiz</a>
+</div>
+{% endblock %}
